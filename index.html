@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="drawer">
+        <div class="drawer-body">
+            <ul class="drawer-list">
+                <li><a href="#" class="drawer-link active"><span class="indicator"></span><span class="label">IMAGE PROCESSOR</span></a></li>
+            </ul>
+            <div class="drawer-footer">
+                <p>Image Kaleidoscope v1.0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tools">
+            <div class="control-panel">
+                <div class="control-panel-content">
+                    <div class="file-uploader">
+                        <label for="image" class="file-uploader-label">
+                            Upload Image
+                            <span class="shortcut-hint">Ctrl+O</span>
+                        </label>
+                        <input type="file" id="image" name="image" accept="image/*" required class="file-uploader-input">
+                        <div id="fileDisplay" class="file-uploader-display">No file selected</div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-group-title">
+                            <h3>Processing Options</h3>
+                            <button id="toggleOptions">+</button>
+                        </div>
+                        <div class="control-group-content expanded" id="optionsContent">
+                            <div class="slider-number-input">
+                                <label for="number">Number of Slices</label>
+                                <input type="number" id="number" name="number" value="30" min="2" step="2" required>
+                                <input type="range" id="numberSlider" min="2" max="100" value="30" step="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="errorMessage" class="error"></div>
+                    
+                    <div class="button primary" id="processBtn">
+                        Process Image
+                        <span class="shortcut-hint">Ctrl+P</span>
+                    </div>
+                    
+                    <div id="loadingIndicator" class="loading">
+                        Processing image, please wait...
+                    </div>
+                </div>
+                
+                <footer>
+                    <div class="info">
+                        <p>Upload an image to create a kaleidoscope effect</p>
+                    </div>
+                </footer>
+            </div>
+
+            <div class="react-p5-wrapper" id="resultContainer">
+                <img id="resultImage" src="" alt="Processed Image" class="result-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
